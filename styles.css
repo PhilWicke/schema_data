@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#app {
+    text-align: center;
+}
+
+#mainImage {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.options {
+    margin-top: 20px;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+}
