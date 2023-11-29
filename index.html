@@ -28,9 +28,9 @@
     <script>
         // Hardcoded list of models for each condition
         const models = {
-            TEXT: ["Llama-2-13b-chat-hf","Llama-2-80b-chat-hf"],
-            VISUAL: ["idefics-80b"],
-            "PSEUDO-VISUAL": ["Llama-2-13b-chat-hf","Llama-2-80b-chat-hf"]
+            TEXT: ['text-davinci-003', 'Llama-2-13b-hf', 'Llama-2-70b-hf', 'gpt-4', 'Llama-2-13b-chat-hf', 'Llama-2-70b-chat-hf', 'davinci-002'],
+            "PSEUDO-VISUAL" : ['Llama-2-70b-chat-hf', 'Llama-2-13b-hf', 'Llama-2-13b-chat-hf', 'gpt-4', 'Llama-2-70b-hf', 'davinci-002'],
+            VISUAL: ['idefics-80b-unquantised', 'gpt-4-vision-preview', 'idefics-80b-instruct', 'idefics-80b']
         };
 
         function updateModels() {
