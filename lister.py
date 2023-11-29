@@ -26,3 +26,19 @@ for condition, model_list in models.items():
         image.save(os.path.join(images_folder, condition, f'{condition}_{model}_Choices.png'))
         print(f'{condition}_{model}_Choices.png has been cropped and saved')
 
+# add header_text.png in the TEXT subfolder to the top of each image in the TEXT subfolder
+# add header_pseudo.png in the PSEUDO-VISUAL subfolder to the top of each image in the PSEUDO-VISUAL subfolder
+# add header_visual.png in the VISUAL subfolder to the top of each image in the VISUAL subfolder
+
+for condition, model_list in models.items():
+    for model in model_list:
+        image = Image.open(os.path.join(images_folder, condition, f'{condition}_{model}_Choices.png'))
+        header = Image.open(os.path.join(images_folder, condition, f'header_{condition.lower()}.png'))
+        header_width, header_height = header.size
+        # create a new image that starts with the header image and append the image of the model below it
+        new_image = Image.new('RGB', (header_width, header_height + image.height))
+        new_image.paste(header, (0, 0))
+        new_image.paste(image, (0, header_height))
+        new_image.save(os.path.join(images_folder, condition, f'{condition}_{model}_Choices.png'))
+        print(f'{condition}_{model}_Choices.png has been saved with header')
+        
