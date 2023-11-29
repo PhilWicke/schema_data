@@ -36,9 +36,8 @@ for condition, model_list in models.items():
         header = Image.open(os.path.join(images_folder, condition, f'header_{condition.lower()}.png'))
         header_width, header_height = header.size
         # create a new image that starts with the header image and append the image of the model below it
-        new_image = Image.new('RGB', (header_width, header_height + image.height))
+        new_image = Image.new('RGB', (image.width, header_height + image.height))
         new_image.paste(header, (0, 0))
         new_image.paste(image, (0, header_height))
         new_image.save(os.path.join(images_folder, condition, f'{condition}_{model}_Choices.png'))
         print(f'{condition}_{model}_Choices.png has been saved with header')
-        
