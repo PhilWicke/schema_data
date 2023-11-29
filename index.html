@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <label for="condition">Select Condition:</label>
+        <select id="condition" onchange="updateModels()">
+            <option value="TEXT">TEXT</option>
+            <option value="VISUAL">VISUAL</option>
+            <option value="PSEUDO-VISUAL">PSEUDO-VISUAL</option>
+        </select>
+
+        <label for="model">Select Model:</label>
+        <select id="model">
+            <!-- Models will be dynamically added here based on the selected condition -->
+        </select>
+
+        <div id="imageContainer">
+            <img id="selectedImage" src="" alt="Selected Image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
