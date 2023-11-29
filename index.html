@@ -25,6 +25,42 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Hardcoded list of models for each condition
+        const models = {
+            TEXT: ["Llama-2-13b-chat-hf","Llama-2-80b-chat-hf"],
+            VISUAL: ["idefics-80b"],
+            "PSEUDO-VISUAL": ["Llama-2-13b-chat-hf","Llama-2-80b-chat-hf"]
+        };
+
+        function updateModels() {
+            var condition = document.getElementById("condition").value;
+            var modelDropdown = document.getElementById("model");
+
+            modelDropdown.innerHTML = "";
+
+            // Add each model as an option in the dropdown
+            models[condition].forEach(model => {
+                var option = document.createElement("option");
+                option.text = model;
+                modelDropdown.add(option);
+            });
+
+            updateImage();
+        }
+
+        function updateImage() {
+            var condition = document.getElementById("condition").value;
+            var model = document.getElementById("model").value;
+            var imagePath = `images/${condition}/${condition}_${model}_Choices.png`;
+            document.getElementById("selectedImage").src = imagePath;
+        }
+
+        // Initial update when the page loads
+        updateModels();
+
+        // Update the image when a model is selected
+        document.getElementById("model").addEventListener("change", updateImage);
+    </script>
 </body>
 </html>
