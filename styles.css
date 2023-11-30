@@ -16,8 +16,23 @@ body {
     margin: 5px;
     padding: 10px;
     cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+}
+
+.text {
+    background-color: #d1e5f0; /* Muted blue */
+    color: #000;
+}
+
+.pseudo-visual {
+    background-color: #e0ece4; /* Muted green */
+    color: #000;
+}
+
+.visual {
+    background-color: #f9ebc1; /* Muted yellow */
+    color: #000;
 }
 
 .modelButton {
@@ -25,8 +40,8 @@ body {
     margin: 5px;
     padding: 8px;
     cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
 }
 
 .modelButton:hover,
