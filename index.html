@@ -31,24 +31,36 @@
         };
 
         function selectCondition(condition) {
-        var modelButtons = document.getElementById("modelButtons");
-        modelButtons.innerHTML = "";
 
-        // Add each model as a button
-        models[condition].forEach(model => {
-            var button = document.createElement("button");
-            button.className = "modelButton";
-            button.textContent = model;
-            button.onclick = function() {
-                selectModel(condition, model);
-            };
-            modelButtons.appendChild(button);
-        });
+            var conditionButtons = document.getElementById("conditionButtons");
 
-        // Show the model buttons
-        modelButtons.classList.remove("hidden");
+            // Toggle the selected state for the condition buttons
+            conditionButtons.childNodes.forEach(button => {
+                button.classList.remove("selectedCondition");
+                if (button.textContent === condition) {
+                    button.classList.add("selectedCondition");
+                }
+            });    
 
-        updateImage(condition, models[condition][0]);
+
+            var modelButtons = document.getElementById("modelButtons");
+            modelButtons.innerHTML = "";
+
+            // Add each model as a button
+            models[condition].forEach(model => {
+                var button = document.createElement("button");
+                button.className = "modelButton";
+                button.textContent = model;
+                button.onclick = function() {
+                    selectModel(condition, model);
+                };
+                modelButtons.appendChild(button);
+            });
+
+            // Show the model buttons
+            modelButtons.classList.remove("hidden");
+
+            updateImage(condition, models[condition][0]);
     }
 
     function selectModel(condition, model) {

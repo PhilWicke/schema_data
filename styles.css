@@ -29,6 +29,12 @@ body {
     border-radius: 5px;
 }
 
+.conditionButton:hover,
+.selectedCondition {
+    background-color: #ddd;
+}
+
+
 .modelButton:hover,
 .selectedModel {
     background-color: #ddd;
