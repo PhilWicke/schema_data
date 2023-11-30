@@ -31,18 +31,6 @@
         };
 
         function selectCondition(condition) {
-
-            var conditionButtons = document.getElementById("conditionButtons");
-
-            // Toggle the selected state for the condition buttons
-            conditionButtons.childNodes.forEach(button => {
-                button.classList.remove("selectedCondition");
-                if (button.textContent === condition) {
-                    button.classList.add("selectedCondition");
-                }
-            });    
-
-
             var modelButtons = document.getElementById("modelButtons");
             modelButtons.innerHTML = "";
 
