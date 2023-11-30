@@ -20,19 +20,8 @@ body {
     border-radius: 5px;
 }
 
-.text {
-    background-color: #d1e5f0; /* Muted blue */
-    color: #000;
-}
-
-.pseudo-visual {
-    background-color: #e0ece4; /* Muted green */
-    color: #000;
-}
-
-.visual {
-    background-color: #f9ebc1; /* Muted yellow */
-    color: #000;
+.conditionButton.active {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .modelButton {
