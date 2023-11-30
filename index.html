@@ -31,14 +31,6 @@
         };
 
         function selectCondition(condition) {
-        var conditionButtons = document.querySelectorAll('.conditionButton');
-        conditionButtons.forEach(button => {
-            button.classList.remove('active');
-        });
-
-        var selectedConditionButton = document.querySelector(`.conditionButton.${condition}`);
-        selectedConditionButton.classList.add('active');
-
         var modelButtons = document.getElementById("modelButtons");
         modelButtons.innerHTML = "";
 
