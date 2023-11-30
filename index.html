@@ -54,12 +54,18 @@
         function selectModel(condition, model) {
             var modelButtons = document.getElementById("modelButtons");
             var selectedModel = document.querySelector(".selectedModel");
-            
+
             // Toggle the selected state for the model buttons
             modelButtons.childNodes.forEach(button => {
                 button.classList.remove("selectedModel");
             });
-            this.classList.add("selectedModel");
+
+            // Toggle the selected state for the clicked button
+            modelButtons.childNodes.forEach(button => {
+                if (button.textContent === model) {
+                    button.classList.add("selectedModel");
+                }
+            });
 
             updateImage();
         }
