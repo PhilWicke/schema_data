@@ -4,7 +4,38 @@ body {
 }
 
 .container {
-    margin-top: 20px;
+    text-align: center;
+}
+
+#conditionButtons {
+    margin-bottom: 20px;
+}
+
+.conditionButton {
+    font-size: 16px;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+.modelButton {
+    font-size: 14px;
+    margin: 5px;
+    padding: 8px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+.modelButton:hover,
+.selectedModel {
+    background-color: #ddd;
+}
+
+.hidden {
+    display: none;
 }
 
 #imageContainer {
