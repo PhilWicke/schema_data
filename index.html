@@ -31,51 +31,44 @@
         };
 
         function selectCondition(condition) {
-            var modelButtons = document.getElementById("modelButtons");
-            modelButtons.innerHTML = "";
+        var modelButtons = document.getElementById("modelButtons");
+        modelButtons.innerHTML = "";
 
-            // Add each model as a button
-            models[condition].forEach(model => {
-                var button = document.createElement("button");
-                button.className = "modelButton";
-                button.textContent = model;
-                button.onclick = function() {
-                    selectModel(condition, model);
-                };
-                modelButtons.appendChild(button);
-            });
+        // Add each model as a button
+        models[condition].forEach(model => {
+            var button = document.createElement("button");
+            button.className = "modelButton";
+            button.textContent = model;
+            button.onclick = function() {
+                selectModel(condition, model);
+            };
+            modelButtons.appendChild(button);
+        });
 
-            // Show the model buttons
-            modelButtons.classList.remove("hidden");
+        // Show the model buttons
+        modelButtons.classList.remove("hidden");
 
-            updateImage();
-        }
+        updateImage(condition, models[condition][0]);
+    }
 
-        function selectModel(condition, model) {
-            var modelButtons = document.getElementById("modelButtons");
-            var selectedModel = document.querySelector(".selectedModel");
+    function selectModel(condition, model) {
+        var modelButtons = document.getElementById("modelButtons");
 
-            // Toggle the selected state for the model buttons
-            modelButtons.childNodes.forEach(button => {
-                button.classList.remove("selectedModel");
-            });
+        // Toggle the selected state for the model buttons
+        modelButtons.childNodes.forEach(button => {
+            button.classList.remove("selectedModel");
+            if (button.textContent === model) {
+                button.classList.add("selectedModel");
+            }
+        });
 
-            // Toggle the selected state for the clicked button
-            modelButtons.childNodes.forEach(button => {
-                if (button.textContent === model) {
-                    button.classList.add("selectedModel");
-                }
-            });
+        updateImage(condition, model);
+    }
 
-            updateImage();
-        }
-
-        function updateImage() {
-            var condition = document.querySelector(".selectedCondition").textContent;
-            var model = document.querySelector(".selectedModel").textContent;
-            var imagePath = `images/${condition}/${condition}_${model}_Choices.png`;
-            document.getElementById("selectedImage").src = imagePath;
-        }
-    </script>
+    function updateImage(condition, model) {
+        var imagePath = `images/${condition}/${condition}_${model}_Choices.png`;
+        document.getElementById("selectedImage").src = imagePath;
+    }
+</script>
 </body>
 </html>
