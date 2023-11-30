@@ -18,10 +18,11 @@ body {
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    transition: box-shadow 0.3s ease; /* Add a smooth transition */
 }
 
 .conditionButton.active {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Stronger box shadow for highlighting */
 }
 
 .modelButton {
